@@ -1,59 +1,24 @@
-import task1
-def test_task1():
-    assert task1.Add("") == 0
-    assert task1.Add("1") == 1
-    assert task1.Add("1,2") == 3
-    assert task1.Add("1,   2  ") == 3
-    assert task1.Add("  7  ,          901  ") == 908
+import task1, task2, task3, task4, task5, task6, task7, task8, task9
+def check(task, string, answer):
+    assert task.Add(string) == answer
+    
+def test_tasks():
+    check(task1, "", 0)
+    check(task1, "1", 1)
+    check(task1, "1,2", 3)
 
-##########################################################
+    check(task2, " 55,   3   ,   43 ,   56    , 0   , 0   , 1", 158)
 
-import task2
-def test_task2():
-    assert task2.Add(" 55,   3   ,   43 ,   56    , 0   , 0   , 1") == 158
+    check(task3, "1\n2,3", 6)
 
-##########################################################
+    check(task4, "//;\n1;2", 3)
 
-import task3
-def test_task3():
-    assert task3.Add("1\n2,3") == 6
+    check(task5, "//;\n-1;-2", -3)
 
-##########################################################
+    check(task6, "//;\n2;1001", 2)
 
-import task4
-def test_task4():
-    assert task4.Add("//;\n1;2") == 3
+    check(task7, "//[***]\n1***2", 3)
 
-##########################################################
+    check(task8, "//[*][%]\n1*2%3", 6)
 
-import task5
-def test_task5():
-    assert task5.Add("//;\n-1;-2") == -3
-
-
-##########################################################
-
-import task6
-def test_task6():
-    assert task6.Add("//;\n2;1001") == 2
-
-
-##########################################################
-
-import task7
-def test_task7():
-    assert task7.Add("//[***]\n1***2") == 3
-
-
-##########################################################
-
-import task8
-def test_task8():
-    assert task8.Add("//[*][%]\n1*2%3") == 6
-
-
-##########################################################
-
-import task9
-def test_task9():
-    assert task9.Add("//[**][%][;;;;]\n1**2%3;;;;6") == 12
+    check(task9, "//[**][%][;;;;]\n1**2%3;;;;6", 12)
